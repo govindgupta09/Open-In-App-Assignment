@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        app:cardBackgroundColor="#0E6FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp">
+
+            <TextView
+                android:id="@+id/dashBoardText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:padding="8dp"
+                android:text="Dashboard"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="16dp"
+                android:padding="8dp"
+                android:src="@drawable/dashboard_img"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/greetingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:padding="5dp"
+        android:text="Good morning"
+        android:textColor="#848287"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView1"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="3dp"
+        android:padding="5dp"
+        android:text="Govind Gupta"
+        android:textColor="@android:color/black"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/greetingTextView"
+        tools:ignore="HardcodedText" />
+
+
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="0dp"
+        android:padding="3dp"
+        android:src="@drawable/palmhey"
+        app:layout_constraintBottom_toTopOf="@id/lineChart"
+        app:layout_constraintStart_toEndOf="@id/nameTextView"
+        app:layout_constraintTop_toBottomOf="@id/greetingTextView"
+        app:layout_constraintVertical_bias="0.176" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="16dp"
+        app:circularflow_radiusInDP="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView" />
+
+    <!-- Tabs -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="3dp"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lineChart"
+        app:tabGravity="fill"
+        app:tabMode="fixed" />
+
+    <!-- ViewPager -->
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--Below code is Using data binding-->
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+
+    <!--    <data>-->
+    <!--        <variable-->
+    <!--            name="greetingViewModel"-->
+    <!--            type="com.govi.openinappassignment.viewmodels.GreetingsViewModel" />-->
+
+    <!--        <variable-->
+    <!--            name="nameViewModel"-->
+    <!--            type="com.govi.openinappassignment.viewmodels.NameViewModel" />-->
+
+    <!--        <variable-->
+    <!--            name="chartViewModel"-->
+    <!--            type="com.govi.openinappassignment.viewmodels.ChartViewModel" />-->
+
+    <!--        <variable-->
+    <!--            name="linksViewModel"-->
+    <!--            type="com.govi.openinappassignment.viewmodels.LinksViewModel" />-->
+    <!--    </data>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:orientation="vertical">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/greetingTextView"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:textSize="18sp"-->
+    <!--            android:textColor="@android:color/black"-->
+    <!--            android:layout_marginTop="16dp"-->
+    <!--            android:text="@{greetingViewModel.greetingMessage}" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/nameTextView"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:textSize="18sp"-->
+    <!--            android:textColor="@android:color/black"-->
+    <!--            android:layout_marginTop="16dp"-->
+    <!--            android:text="@{nameViewModel.getName}" />-->
+
+    <!--        &lt;!&ndash; LineChart &ndash;&gt;-->
+    <!--        <com.github.mikephil.charting.charts.LineChart-->
+    <!--            android:id="@+id/lineChart"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:data="@{chartViewModel.getChartData}" />-->
+
+    <!--        &lt;!&ndash; Tabs &ndash;&gt;-->
+    <!--        <com.google.android.material.tabs.TabLayout-->
+    <!--            android:id="@+id/tabLayout"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:elevation="3dp"-->
+    <!--            android:minHeight="?attr/actionBarSize"-->
+    <!--            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+    <!--            app:tabGravity="fill"-->
+    <!--            app:tabMode="fixed" />-->
+
+    <!--        &lt;!&ndash; ViewPager &ndash;&gt;-->
+    <!--        <androidx.viewpager.widget.ViewPager-->
+    <!--            android:id="@+id/viewPager"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            app:linksViewModel="@{linksViewModel}" />-->
+
+    <!--    </LinearLayout>-->
+    <!--</layout>-->
